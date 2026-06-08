@@ -3,7 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Paul Anzalone Physical Therapy - Mobile PT in Northwest Arkansas</title>
+    <title>Mobile Physical Therapy in Northwest Arkansas | Paul Anzalone PT</title>
+    <meta name="description" content="In-home mobile physical therapy serving Fayetteville, Rogers, Springdale, Bentonville, Bella Vista, and Centerton, Arkansas. Board-certified Doctor of Physical Therapy. Book your visit online today.">
+    <link rel="canonical" href="https://makingmovespt.com/">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="favicon.svg">
+
+    <!-- Calendly popup widget assets -->
+    <link rel="stylesheet" href="https://assets.calendly.com/assets/external/widget.css">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <!-- Social sharing (Facebook, texts, etc.) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mobile Physical Therapy in Northwest Arkansas | Paul Anzalone PT">
+    <meta property="og:description" content="In-home physical therapy serving Fayetteville, Rogers, Springdale, Bentonville, Bella Vista, and Centerton, Arkansas. Book online today.">
+    <meta property="og:url" content="https://makingmovespt.com/">
+    <meta property="og:image" content="https://makingmovespt.com/images/paul-photo8.jpg">
+
+    <!-- Structured data: helps Google understand the business and the cities it serves -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PhysicalTherapy",
+      "name": "Making Moves PT - Paul Anzalone Physical Therapy",
+      "description": "In-home mobile physical therapy serving Northwest Arkansas.",
+      "url": "https://makingmovespt.com/",
+      "telephone": "+1-870-814-7037",
+      "email": "makingmovesmobilept@outlook.com",
+      "image": "https://makingmovespt.com/images/paul-photo8.jpg",
+      "medicalSpecialty": "PhysicalTherapy",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressRegion": "AR",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        { "@type": "City", "name": "Fayetteville, Arkansas" },
+        { "@type": "City", "name": "Rogers, Arkansas" },
+        { "@type": "City", "name": "Springdale, Arkansas" },
+        { "@type": "City", "name": "Bentonville, Arkansas" },
+        { "@type": "City", "name": "Bella Vista, Arkansas" },
+        { "@type": "City", "name": "Centerton, Arkansas" }
+      ]
+    }
+    </script>
     <style>
         :root {
             
@@ -13,10 +57,16 @@
             --light-gray: #f8f9fa;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            font-size: 1.0625rem;
+            line-height: 1.7;
             margin: 0;
+            overflow-x: hidden;
         }
 
         .header {
@@ -34,7 +84,6 @@
 
         /* Updated About Section Styles */
         .about-section {
-            background: var(--light-gray);
             display: grid;
             grid-template-columns: 1fr;
             align-items: center;
@@ -93,6 +142,45 @@
             padding: 4rem 1rem;
             max-width: 1200px;
             margin: 0 auto;
+            position: relative;
+        }
+
+        /* Full-width tinted band behind alternating sections */
+        .band-gray::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            background: var(--light-gray);
+            z-index: -1;
+        }
+
+        /* Accent underline beneath section headings */
+        .section h2 {
+            position: relative;
+            margin-bottom: 1.5rem;
+        }
+
+        .section h2::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin-top: 0.75rem;
+            background: var(--primary-green);
+            border-radius: 2px;
+        }
+
+        /* Center the accent under centered headings */
+        .how-it-works h2::after,
+        .service-area h2::after,
+        .testimonials h2::after,
+        .schedule-section h2::after {
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .benefits-grid {
@@ -103,10 +191,11 @@
         }
 
         .benefit-card {
+            background: white;
             text-align: center;
             padding: 2rem;
             border-radius: 10px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
         }
 
         .conditions-grid {
@@ -118,10 +207,11 @@
         }
 
         .conditions-grid li {
-            background: var(--light-gray);
+            background: white;
             padding: 1rem;
             border-radius: 5px;
             text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
 
         .bio-intro {
@@ -228,10 +318,126 @@
             color: var(--primary-green);
             border: 2px solid white;
         }
-    
+
         .header .cta-button:hover {
             background: var(--primary-green);
             color: white;
+        }
+
+        .header .cta-button-primary {
+            background: var(--primary-green);
+            color: white;
+            border: 2px solid var(--primary-green);
+        }
+
+        .header .cta-button-primary:hover {
+            background: white;
+            color: var(--primary-green);
+        }
+
+        /* === Service Area === */
+        .service-area {
+            text-align: center;
+        }
+
+        .city-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 1rem;
+            list-style: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 2rem auto 0;
+        }
+
+        .city-grid li {
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--primary-blue);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* === Scheduling === */
+        .schedule-section {
+            text-align: center;
+        }
+
+        .schedule-intro {
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            color: #444;
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2.5rem;
+            text-align: left;
+        }
+
+        .schedule-card {
+            background: white;
+            border: 1px solid #e6e9ec;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .schedule-card.featured {
+            border: 2px solid var(--primary-green);
+        }
+
+        .schedule-badge {
+            align-self: flex-start;
+            background: var(--primary-green);
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+            padding: 0.25rem 0.85rem;
+            border-radius: 999px;
+            margin-bottom: 0.85rem;
+        }
+
+        .schedule-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            margin: 0 0 0.25rem;
+        }
+
+        .schedule-meta {
+            color: var(--primary-green);
+            font-weight: bold;
+            font-size: 0.95rem;
+            margin: 0 0 1rem;
+        }
+
+        .schedule-card p {
+            color: #444;
+            margin: 0 0 1.5rem;
+        }
+
+        .schedule-card .schedule-book {
+            margin: auto 0 0;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .schedule-fallback {
+            margin-top: 1.5rem;
+            color: #666;
+        }
+
+        .schedule-fallback a {
+            color: var(--primary-green);
+            font-weight: bold;
+            text-decoration: none;
         }
     
         .cta-buttons .cta-button {
@@ -294,20 +500,176 @@
             justify-content: flex-end;
         }
     }
-        
+
+        /* === Hero phone + trust line === */
+        .hero-phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .hero-phone a {
+            color: white;
+            text-decoration: none;
+            border-bottom: 2px solid rgba(255,255,255,0.6);
+        }
+
+        .hero-trust {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 0.5rem 0 0;
+        }
+
+        /* === How It Works === */
+        .how-it-works {
+            text-align: center;
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .step-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .step-number {
+            width: 56px;
+            height: 56px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--primary-green);
+            color: white;
+            font-size: 1.75rem;
+            font-weight: bold;
+            border-radius: 50%;
+        }
+
+        .step-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-card p {
+            color: #444;
+        }
+
+        /* === Testimonials === */
+        .testimonials {
+            text-align: center;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin: 0;
+            text-align: left;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card .stars {
+            color: #f5a623;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            color: #444;
+            line-height: 1.7;
+            margin: 0 0 1.5rem;
+        }
+
+        .testimonial-card cite {
+            font-style: normal;
+            font-weight: bold;
+            color: var(--primary-blue);
+            margin-top: auto;
+        }
+
+        .testimonials-cta {
+            margin-top: 2.5rem;
+            color: #666;
+        }
+
+        .testimonials-cta a {
+            color: var(--primary-green);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        /* === Sticky mobile call bar === */
+        .mobile-call-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            box-shadow: 0 -2px 12px rgba(0,0,0,0.18);
+        }
+
+        .mobile-call-bar-btn {
+            flex: 1;
+            text-align: center;
+            padding: 1rem 0.5rem;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .mobile-call-bar-btn.call {
+            background: var(--primary-green);
+        }
+
+        .mobile-call-bar-btn.schedule {
+            background: var(--primary-blue);
+        }
+
+        @media (max-width: 767px) {
+            .mobile-call-bar {
+                display: flex;
+            }
+            body {
+                padding-bottom: 60px;
+            }
+        }
+
     </style>
 </head>
 <body>
     <header class="header">
     <h1>Expert Physical Therapy in the Comfort of Your Home</h1>
-    <p>Serving Northwest Arkansas with Mobile Rehabilitation Services</p>
+    <p>Mobile physical therapy serving Fayetteville, Rogers, Springdale, Bentonville, Bella Vista &amp; Centerton, Arkansas</p>
     <div class="cta-buttons">
-        <a href="mailto:makingmovesmobilept@outlook.com" class="cta-button">Email Us</a>
+        <a href="#schedule" class="cta-button cta-button-primary">Schedule Online</a>
         <a href="tel:870-814-7037" class="cta-button">Call or Text</a>
     </div>
+    <p class="hero-phone">Call or text <a href="tel:870-814-7037">(870) 814-7037</a></p>
+    <p class="hero-trust">Licensed Doctor of Physical Therapy · Locally owned · Serving Northwest Arkansas</p>
 </header>
 
-    <section class="section">
+    <section class="section band-gray">
         <h2>Why Choose Making Moves PT?</h2>
         <div class="benefits-grid">
             <div class="benefit-card">
@@ -315,7 +677,7 @@
                 <p>Save time and recover faster in your familiar environment</p>
             </div>
             <div class="benefit-card">
-                <h3>👨⚕️ 1-on-1 Care</h3>
+                <h3>🩺 1-on-1 Care</h3>
                 <p>Undivided attention from your dedicated therapist</p>
             </div>
             <div class="benefit-card">
@@ -325,7 +687,28 @@
         </div>
     </section>
 
-    <section class="section">
+    <section class="section how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-grid">
+            <div class="step-card">
+                <div class="step-number">1</div>
+                <h3>Reach Out</h3>
+                <p>Book online in just a few clicks, or simply call or text if you have questions. We'll find a time that works for you.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">2</div>
+                <h3>Paul Comes to You</h3>
+                <p>Paul arrives at your home at the scheduled time with all the equipment needed &mdash; no driving and no waiting rooms.</p>
+            </div>
+            <div class="step-card">
+                <div class="step-number">3</div>
+                <h3>Feel the Difference</h3>
+                <p>You receive focused, one-on-one treatment built around your goals, in the comfort of your own home.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section band-gray">
         <h2>Conditions We Treat</h2>
         <ul class="conditions-grid">
             <li>Neck & Back Pain</li>
@@ -337,14 +720,87 @@
             <li>Post-Surgical Rehab</li>
             <li>Sciatica</li>
             <li>Carpal Tunnel</li>
-            <li>Planter Fascia Pain</li>
+            <li>Plantar Fasciitis</li>
             <li>Vertigo</li>
             <li>TMJ Dysfunction</li>
             <li>Parkinson's</li>
         </ul>
     </section>
 
-    <section class="section about-section">
+    <section class="section service-area">
+        <h2>Areas We Serve in Northwest Arkansas</h2>
+        <p>Making Moves PT brings physical therapy directly to your home across Northwest Arkansas. We proudly provide mobile physical therapy in:</p>
+        <ul class="city-grid">
+            <li>Fayetteville</li>
+            <li>Rogers</li>
+            <li>Springdale</li>
+            <li>Bentonville</li>
+            <li>Bella Vista</li>
+            <li>Centerton</li>
+        </ul>
+        <p style="margin-top:2rem;">Not sure if you're in our service area? <a href="tel:870-814-7037" style="color:var(--primary-green);font-weight:bold;">Give us a call</a> &mdash; we're happy to help.</p>
+    </section>
+
+    <section class="section testimonials band-gray">
+        <h2>What Our Patients Say</h2>
+        <div class="testimonials-grid">
+            <blockquote class="testimonial-card">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>"He came to my home for a complimentary assessment, which was very convenient. Throughout the process he was professional, knowledgeable, and genuinely invested in helping me recover safely and effectively. I would highly recommend Paul to anyone looking for a skilled and caring physical therapist."</p>
+                <cite>— Asim B.</cite>
+            </blockquote>
+            <blockquote class="testimonial-card">
+                <div class="stars" aria-label="5 out of 5 stars">★★★★★</div>
+                <p>"I can't say enough good things about Paul. He truly cares about every single person and goes above and beyond to help people feel better, stronger, and more confident. If you're looking for someone you can trust with your recovery, strength, or overall health, I highly recommend him."</p>
+                <cite>— Haley H.</cite>
+            </blockquote>
+        </div>
+        <!--
+          Optional: add a "Read more reviews on Google" link here.
+          Paste Paul's Google review page URL into the href below and
+          uncomment this paragraph.
+          <p class="testimonials-cta">
+            <a href="PASTE-GOOGLE-REVIEWS-LINK-HERE" target="_blank" rel="noopener">Read more reviews on Google &rarr;</a>
+          </p>
+        -->
+    </section>
+
+    <section class="section schedule-section" id="schedule">
+        <h2>Schedule Your Visit Online</h2>
+        <p class="schedule-intro">Book your in-home physical therapy appointment in just a few clicks &mdash; no phone call required. Pick a time that works for you and we'll come to you.</p>
+
+        <div class="schedule-grid">
+            <div class="schedule-card featured">
+                <span class="schedule-badge">New patients start here</span>
+                <h3>Initial Evaluation</h3>
+                <p class="schedule-meta">60 min · In-home visit</p>
+                <p>Your first visit: a thorough in-home assessment and a personalized treatment plan built around your goals.</p>
+                <a href="https://calendly.com/makingmovespt/30min" target="_blank" rel="noopener"
+                   class="cta-button schedule-book"
+                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/30min'});return false;">Book Initial Evaluation</a>
+            </div>
+            <div class="schedule-card">
+                <h3>Discovery Call</h3>
+                <p class="schedule-meta">15 min · Phone call</p>
+                <p>Not sure if mobile physical therapy is right for you? Book a quick call and Paul will answer your questions.</p>
+                <a href="https://calendly.com/makingmovespt/discovery-call" target="_blank" rel="noopener"
+                   class="cta-button schedule-book"
+                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/discovery-call'});return false;">Book a Call</a>
+            </div>
+            <div class="schedule-card">
+                <h3>Follow-Up Visit</h3>
+                <p class="schedule-meta">60 min · In-home visit</p>
+                <p>Already a patient? Schedule your next in-home session at a time that works for you.</p>
+                <a href="https://calendly.com/makingmovespt/follow-up-visit" target="_blank" rel="noopener"
+                   class="cta-button schedule-book"
+                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/follow-up-visit'});return false;">Book Follow-Up</a>
+            </div>
+        </div>
+
+        <p class="schedule-fallback">Prefer to reach out directly? <a href="tel:870-814-7037">Call or text (870) 814-7037</a> or <a href="mailto:makingmovesmobilept@outlook.com">email us</a>.</p>
+    </section>
+
+    <section class="section about-section band-gray">
         <div>
             <h2>Meet Paul</h2>
             <p class="bio-intro">An Arkansas native with a passion for helping people move better and live better.</p>
@@ -426,21 +882,27 @@
                 <p>📞 <a href="tel:870-814-7037">(870) 814-7037</a></p>
             </div>
             <div class="footer-buttons">
-                <a href="mailto:makingmovesmobilept@outlook.com"
-                   class="cta-button">Email Us</a>
+                <a href="#schedule"
+                   class="cta-button">Schedule Online</a>
                 <a href="tel:870-814-7037"
                    class="cta-button">Call or Text</a>
             </div>
         </div>
         <div>
             <p class="copyright">
-                © 2024 Paul Anzalone Physical Therapy<br>
+                © 2026 Paul Anzalone Physical Therapy<br>
                 Serving Northwest Arkansas with Mobile Care<br>
                 Proudly Founded in Arkansas
             </p>
         </div>
     </div>
 </footer>
-    
+
+    <!-- Sticky call bar: mobile only, one tap from anywhere on the page -->
+    <div class="mobile-call-bar">
+        <a href="tel:870-814-7037" class="mobile-call-bar-btn call">📞 Call or Text</a>
+        <a href="#schedule" class="mobile-call-bar-btn schedule">📅 Schedule</a>
+    </div>
+
 </body>
 </html>
