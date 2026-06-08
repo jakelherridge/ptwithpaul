@@ -178,6 +178,7 @@
         .how-it-works h2::after,
         .service-area h2::after,
         .testimonials h2::after,
+        .pricing h2::after,
         .schedule-section h2::after {
             margin-left: auto;
             margin-right: auto;
@@ -357,6 +358,60 @@
             font-weight: bold;
             color: var(--primary-blue);
             box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        /* === Pricing === */
+        .pricing {
+            text-align: center;
+        }
+
+        .pricing-intro {
+            max-width: 700px;
+            margin: 0 auto;
+            color: #444;
+        }
+
+        .pricing-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+
+        .pricing-highlight {
+            background: var(--light-gray);
+            border-radius: 10px;
+            padding: 2rem 2.5rem;
+            min-width: 200px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+
+        .pricing-highlight .price {
+            display: block;
+            font-size: 2.75rem;
+            font-weight: bold;
+            color: var(--primary-green);
+            line-height: 1;
+        }
+
+        .pricing-highlight .price-label {
+            display: block;
+            margin-top: 0.5rem;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .pricing-foot {
+            max-width: 720px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        .pricing-foot a {
+            color: var(--primary-green);
+            font-weight: bold;
+            text-decoration: none;
         }
 
         /* === Scheduling === */
@@ -666,7 +721,7 @@
         <a href="tel:870-814-7037" class="cta-button">Call or Text</a>
     </div>
     <p class="hero-phone">Call or text <a href="tel:870-814-7037">(870) 814-7037</a></p>
-    <p class="hero-trust">Licensed Doctor of Physical Therapy · Locally owned · Serving Northwest Arkansas</p>
+    <p class="hero-trust">✓ Free first visit&nbsp;&nbsp;·&nbsp;&nbsp;✓ No doctor's referral needed&nbsp;&nbsp;·&nbsp;&nbsp;✓ Board-certified Doctor of Physical Therapy</p>
 </header>
 
     <section class="section band-gray">
@@ -765,23 +820,39 @@
         -->
     </section>
 
-    <section class="section schedule-section" id="schedule">
+    <section class="section pricing">
+        <h2>Simple, Honest Pricing</h2>
+        <p class="pricing-intro">Your first visit is completely free, with no obligation. After that, pricing is simple and upfront &mdash; no insurance hoops, no surprise bills.</p>
+        <div class="pricing-highlights">
+            <div class="pricing-highlight">
+                <span class="price">Free</span>
+                <span class="price-label">Initial Evaluation</span>
+            </div>
+            <div class="pricing-highlight">
+                <span class="price">$120</span>
+                <span class="price-label">Per Follow-Up Visit</span>
+            </div>
+        </div>
+        <p class="pricing-foot">Making Moves PT is a cash-based, self-pay practice &mdash; that means <strong>no doctor's referral required</strong>, no insurance billing, and no surprise charges months later. You simply get Paul's full, one-on-one attention every single visit. Questions about payment? <a href="tel:870-814-7037">Just give us a call</a>.</p>
+    </section>
+
+    <section class="section schedule-section band-gray" id="schedule">
         <h2>Schedule Your Visit Online</h2>
         <p class="schedule-intro">Book your in-home physical therapy appointment in just a few clicks &mdash; no phone call required. Pick a time that works for you and we'll come to you.</p>
 
         <div class="schedule-grid">
             <div class="schedule-card featured">
-                <span class="schedule-badge">New patients start here</span>
+                <span class="schedule-badge">Free · New patients start here</span>
                 <h3>Initial Evaluation</h3>
-                <p class="schedule-meta">60 min · In-home visit</p>
-                <p>Your first visit: a thorough in-home assessment and a personalized treatment plan built around your goals.</p>
+                <p class="schedule-meta">60 min · In-home visit · Free</p>
+                <p>Your first visit is on us: a thorough in-home assessment and a personalized treatment plan built around your goals &mdash; with no obligation to continue.</p>
                 <a href="https://calendly.com/makingmovespt/30min" target="_blank" rel="noopener"
                    class="cta-button schedule-book"
-                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/30min'});return false;">Book Initial Evaluation</a>
+                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/30min'});return false;">Book Your Free Evaluation</a>
             </div>
             <div class="schedule-card">
                 <h3>Discovery Call</h3>
-                <p class="schedule-meta">15 min · Phone call</p>
+                <p class="schedule-meta">15 min · Phone call · Free</p>
                 <p>Not sure if mobile physical therapy is right for you? Book a quick call and Paul will answer your questions.</p>
                 <a href="https://calendly.com/makingmovespt/discovery-call" target="_blank" rel="noopener"
                    class="cta-button schedule-book"
@@ -789,7 +860,7 @@
             </div>
             <div class="schedule-card">
                 <h3>Follow-Up Visit</h3>
-                <p class="schedule-meta">60 min · In-home visit</p>
+                <p class="schedule-meta">60 min · In-home visit · $120</p>
                 <p>Already a patient? Schedule your next in-home session at a time that works for you.</p>
                 <a href="https://calendly.com/makingmovespt/follow-up-visit" target="_blank" rel="noopener"
                    class="cta-button schedule-book"
@@ -800,7 +871,7 @@
         <p class="schedule-fallback">Prefer to reach out directly? <a href="tel:870-814-7037">Call or text (870) 814-7037</a> or <a href="mailto:makingmovesmobilept@outlook.com">email us</a>.</p>
     </section>
 
-    <section class="section about-section band-gray">
+    <section class="section about-section">
         <div>
             <h2>Meet Paul</h2>
             <p class="bio-intro">An Arkansas native with a passion for helping people move better and live better.</p>
