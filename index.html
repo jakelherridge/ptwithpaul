@@ -425,63 +425,20 @@
             color: #444;
         }
 
-        .schedule-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2.5rem;
-            text-align: left;
-        }
-
-        .schedule-card {
-            background: white;
-            border: 1px solid #e6e9ec;
-            border-radius: 10px;
-            padding: 2rem;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.06);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .schedule-card.featured {
-            border: 2px solid var(--primary-green);
-        }
-
-        .schedule-badge {
-            align-self: flex-start;
-            background: var(--primary-green);
-            color: white;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 0.25rem 0.85rem;
-            border-radius: 999px;
-            margin-bottom: 0.85rem;
-        }
-
-        .schedule-card h3 {
-            color: var(--primary-blue);
-            font-size: 1.3rem;
-            margin: 0 0 0.25rem;
-        }
-
-        .schedule-meta {
+        .schedule-free-tag {
             color: var(--primary-green);
             font-weight: bold;
-            font-size: 0.95rem;
-            margin: 0 0 1rem;
+            font-size: 0.6em;
+            white-space: nowrap;
         }
 
-        .schedule-card p {
-            color: #444;
-            margin: 0 0 1.5rem;
+        .schedule-cta-wrap {
+            margin: 2.5rem 0 0.5rem;
         }
 
-        .schedule-card .schedule-book {
-            margin: auto 0 0;
-            display: block;
-            width: 100%;
-            box-sizing: border-box;
-            text-align: center;
+        .schedule-book-single {
+            font-size: 1.15rem;
+            padding: 1.1rem 2.75rem;
         }
 
         .schedule-fallback {
@@ -837,35 +794,13 @@
     </section>
 
     <section class="section schedule-section band-gray" id="schedule">
-        <h2>Schedule Your Visit Online</h2>
-        <p class="schedule-intro">Book your in-home physical therapy appointment in just a few clicks &mdash; no phone call required. Pick a time that works for you and we'll come to you.</p>
+        <h2>Schedule a Visit <span class="schedule-free-tag">(first visit free)</span></h2>
+        <p class="schedule-intro">Pick a time that works for you and we'll come to you &mdash; at home or wherever's most convenient. Your first visit is completely free, with no obligation.</p>
 
-        <div class="schedule-grid">
-            <div class="schedule-card featured">
-                <span class="schedule-badge">Free · New patients start here</span>
-                <h3>Initial Evaluation</h3>
-                <p class="schedule-meta">60 min · Home or public space · Free</p>
-                <p>Your first visit is on us: a thorough hands-on assessment and a personalized treatment plan built around your goals &mdash; with no obligation to continue.</p>
-                <a href="https://calendly.com/makingmovespt/30min" target="_blank" rel="noopener"
-                   class="cta-button schedule-book"
-                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/30min'});return false;">Book Your Free Evaluation</a>
-            </div>
-            <div class="schedule-card">
-                <h3>Discovery Call</h3>
-                <p class="schedule-meta">15 min · Phone call · Free</p>
-                <p>Not sure if mobile physical therapy is right for you? Book a quick call and Paul will answer your questions.</p>
-                <a href="https://calendly.com/makingmovespt/discovery-call" target="_blank" rel="noopener"
-                   class="cta-button schedule-book"
-                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/discovery-call'});return false;">Book a Call</a>
-            </div>
-            <div class="schedule-card">
-                <h3>Follow-Up Visit</h3>
-                <p class="schedule-meta">60 min · Home or public space · $120</p>
-                <p>Already a patient? Schedule your next session at a time and place that works for you.</p>
-                <a href="https://calendly.com/makingmovespt/follow-up-visit" target="_blank" rel="noopener"
-                   class="cta-button schedule-book"
-                   onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/follow-up-visit'});return false;">Book Follow-Up</a>
-            </div>
+        <div class="schedule-cta-wrap">
+            <a href="https://calendly.com/makingmovespt/follow-up-visit" target="_blank" rel="noopener"
+               class="cta-button schedule-book-single"
+               onclick="Calendly.initPopupWidget({url:'https://calendly.com/makingmovespt/follow-up-visit'});return false;">See Available Times</a>
         </div>
 
         <p class="schedule-fallback">Prefer to reach out directly? <a href="tel:870-814-7037">Call or text (870) 814-7037</a> or <a href="mailto:makingmovesmobilept@outlook.com">email us</a>.</p>
